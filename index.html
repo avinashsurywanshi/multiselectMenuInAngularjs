@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html class="no-js no-touch" ng-app='multiSelectMenu'>
+    <head>
+    	<title>Multi Select Menu with Angularjs 1.6.6 by Avinash Suryawanshi. Web User Interface Designer and Developer</title>
+        <meta name="description" content="Multiselect menu in Angularjs 1.6.6">
+        <meta name="keywords" content="Multiselect menu in Angularjs">
+        <meta name="author" content="Avinash Suryawanshi, Web User Interface Designer and Developer in Dallas Texas USA">
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="">
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" href="style.css">
+    </head>
+
+    <body ng-controller="multiSelectController">
+		<div class="container">
+			<br><br>
+			<div class="col-md-6 col-md-offset-3">
+			<div class="dropdown">
+					<input type="hidden" id="fieldSource" value="">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <span class="dropdownLabel">{{selectMenuLable}}</span>
+                        <span class="caret"></span>
+                    </button>
+					<ul class="dropdown-menu multiSelectMenu" role="menu">
+                        <li ng-repeat="filterOption in filterOptions">
+                            <label class="checkbox">
+                                    <input type="checkbox" ng-click="toggleFilterOption(filterOption)">
+                                   {{filterOption.description}}
+                            </label>
+                        </li>
+                    </ul>
+				</div>
+			</div>
+		</div>
+		<!-- vendor -->
+		<script src="node_modules/jquery/dist/jquery.js"></script>
+		<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="node_modules/angular/angular.js"></script>
+		<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+		<!-- scripts -->
+		<script src="app.js"></script>
+	</body>
+
+</html>
